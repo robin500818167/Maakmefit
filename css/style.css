@@ -714,3 +714,11 @@ footer i.fa-solid {
         color: var(--second-subtitle-color);
     }
   }
+  .svdm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    img {
+        border-radius: 1rem;
+    }
+  }
