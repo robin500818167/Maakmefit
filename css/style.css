@@ -445,7 +445,7 @@ footer i.fa-solid {
 .profile-picture {
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .file-upload {
@@ -493,15 +493,15 @@ footer i.fa-solid {
 @keyframes progress {
     0% { --percentage: 0; }
     100% { --percentage: var(--value); }
-  }
+}
   
-  @property --percentage {
+@property --percentage {
     syntax: '<number>';
     inherits: true;
     initial-value: 0;
-  }
+}
   
-  [role="progressbar"] {
+[role="progressbar"] {
     --percentage: var(--value);
     --size: 300px;
     animation: progress 2s 0.5s forwards;
@@ -513,9 +513,9 @@ footer i.fa-solid {
     display: flex;
     align-items: flex-end;
     justify-content: center;
-  }
+}
   
-  [role="progressbar"]::before {
+[role="progressbar"]::before {
     content: "";
     position: absolute;
     top: 0;
@@ -527,29 +527,32 @@ footer i.fa-solid {
     mask-mode: alpha;
     -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
     -webkit-mask-mode: alpha;
-  }
+}
   
-  [role="progressbar"]::after {
+[role="progressbar"]::after {
     counter-reset: percentage var(--value);
     content: 'Je bent 2 kilo afgevallen van de 16 kilo';
     max-width: 8rem;
     text-align: center;
-  }
-  .progress {
+}
+
+.progress {
     display: flex;
     justify-content: center;
     margin: 1rem 0rem;
-  }
-  .update {
+}
+
+.update {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
-  }
-  #change {
-    display: none;
-  }
+}
   
-  #change:target {
+#change {
+    display: none;
+}
+  
+#change:target {
     display: block;
     background-color: var(--primary-color);
     position: absolute;
@@ -592,13 +595,14 @@ footer i.fa-solid {
             border-radius: 1rem;
         }
     }
-  }
-  .prestations {
+}
+  
+.prestations {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, auto);
-    row-gap: 0.5rem;
+    gap: 0.5rem;
 
     p {
         justify-self: center;
@@ -608,15 +612,17 @@ footer i.fa-solid {
         background-color: var(--primary-color);
         color: var(--secondary-color);
         border-radius: 100%;
-        padding: 2rem;
+        padding: 2.5rem 0.5rem;
     }
-  }
-  .notifications {
+}
+  
+.notifications {
     .subject {
         margin: 1rem 0 2rem 0;
     }
-  }
-  .notification {
+}
+  
+.notification {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, 1fr);
@@ -641,15 +647,17 @@ footer i.fa-solid {
         width: 4rem;
         justify-self: end;
     }
-  }
-  .mmf {
+}
+
+.mmf {
     background-color: var(--tertiary-color);
 
     p:nth-child(2) {
         color: var(--secondary-color);
     }
-  }
-  .friend {
+}
+  
+.friend {
     display: grid;
     grid-template-columns: 5rem;
     grid-template-rows: repeat(2, auto);
@@ -673,8 +681,9 @@ footer i.fa-solid {
     p:nth-child(3) {
         color: var(--second-subtitle-color);
     }
-  }
-  .sportplan {
+}
+  
+.sportplan {
     display: grid;
     grid-template-columns: 7rem 10rem;
     grid-template-rows: repeat(2, auto);
@@ -693,8 +702,9 @@ footer i.fa-solid {
     p:nth-child(3) {
         color: var(--second-subtitle-color);
     }
-  }
-  .workouts {
+}
+  
+.workouts {
     display: grid;
     grid-template-columns: 5rem 15rem;
     grid-template-rows: repeat(2, auto);
@@ -713,12 +723,88 @@ footer i.fa-solid {
     p:nth-child(3) {
         color: var(--second-subtitle-color);
     }
-  }
-  .svdm {
+}
+  
+.svdm {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     img {
         border-radius: 1rem;
     }
-  }
+}
+
+.community {
+
+    .button-purple {
+        padding: 2rem;
+        min-height: 6rem;
+    }
+}
+
+#note {
+    display: none;
+}
+  
+#note:target {
+    display: block;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: -1rem;
+    width: 100%;
+    z-index: 9;
+    border-radius: 1rem 1rem 0rem 0rem;
+    padding: 1rem;
+
+    i {
+        color: var(--secondary-color);
+        display: flex;
+        justify-content: end;
+        margin: 1rem 0;
+    }
+    .center {
+        margin: 1.5rem 0rem;
+        a {
+            background-color: var(--secondary-color);
+            padding: 1rem 9rem;
+            border-radius: 1rem;
+        }
+    }
+}
+
+.challenge {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+
+    a {
+        color: var(--secondary-color);
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}
+
+.presence {
+    margin-top: 2rem;
+}
+
+.footer-link.actives:after {
+    display: block;
+}
+
+.footer-link::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: none;
+    background: var(--primary-color);
+    z-index: -1;
+}
+.footer-link.actives i {
+    color: var(--secondary-color);
+    opacity: 1;
+}
