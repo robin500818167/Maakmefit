@@ -555,8 +555,8 @@ footer i.fa-solid {
 #change:target {
     display: block;
     background-color: var(--primary-color);
-    position: absolute;
-    bottom: -1rem;
+    position: fixed;
+    bottom: 3rem;
     width: 100%;
     z-index: 9;
     border-radius: 1rem 1rem 0rem 0rem;
@@ -659,8 +659,7 @@ footer i.fa-solid {
   
 .friend {
     display: grid;
-    grid-template-columns: 5rem;
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 17rem 5rem;
     column-gap: 1rem;
     margin-bottom: 1rem;
 
@@ -674,12 +673,20 @@ footer i.fa-solid {
         justify-self: end;
         align-self: center;
     }
-    p:nth-child(2) {
-        align-self: end;
-        font-weight: bold;
+    a {
+        display: flex;
+        gap: 1rem;
     }
-    p:nth-child(3) {
-        color: var(--second-subtitle-color);
+    div {
+        align-self: center;
+
+        p:nth-child(1) {
+            align-self: end;
+            font-weight: bold;
+        }
+        p:nth-child(2) {
+            color: var(--second-subtitle-color);
+        }
     }
 }
   
@@ -749,12 +756,14 @@ footer i.fa-solid {
 #note:target {
     display: block;
     background-color: var(--primary-color);
-    position: absolute;
-    bottom: -1rem;
+    position: fixed;
+    bottom: 3rem;
+    right: 0;
     width: 100%;
     z-index: 9;
     border-radius: 1rem 1rem 0rem 0rem;
     padding: 1rem;
+    color: var(--secondary-color);
 
     i {
         color: var(--secondary-color);
@@ -763,12 +772,34 @@ footer i.fa-solid {
         margin: 1rem 0;
     }
     .center {
-        margin: 1.5rem 0rem;
+        margin: 5rem 0 1.5rem 0;
+        
         a {
             background-color: var(--secondary-color);
             padding: 1rem 9rem;
             border-radius: 1rem;
         }
+    }
+    input {
+        background-color: var(--primary-color);
+        border: none;
+        border-bottom: 0.2rem solid var(--secondary-color);
+        padding: 1rem 0;
+        min-width: 100%;
+
+        ::placeholder {
+            color: var(--secondary-color);
+        }
+    }
+    article {
+        margin-bottom: 1rem;
+        p {
+            color: var(--subtitle-color);
+        }
+    }
+    article p:first-child {
+        color: var(--secondary-color);
+        font-weight: bold;
     }
 }
 
@@ -829,4 +860,95 @@ footer i.fa-solid {
     p:first-child {
         font-weight: bold;
       }
+}
+input[type="checkbox"] {
+    accent-color: var(--primary-color);
+}
+
+.challenge1 {
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 4rem;
+    margin-right: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+
+    a {
+        font-size: 1.24rem;
+        color: var(--secondary-color);
+        font-weight: bold;
+    }
+}
+
+.achievements {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .achievement {
+        text-align: center;
+
+        .achieved:first-child {
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            padding: 2.7rem 0;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        p:first-child {
+            border-radius: 50%;
+            padding: 2.7rem 0;
+            margin-bottom: 0.5rem;
+            border: 0.1rem solid var(--primary-color);
+            color: var(--primary-color);
+        }
+    }
+}
+
+.workout-header {
+    a:first-child {
+        position: relative;
+        z-index: 1;
+    }
+
+    .note {
+        position: absolute;
+        right: 1rem;
+        top: 19rem;
+    }
+}
+
+ol {
+    margin: 3rem 0;
+    list-style-position: inside;
+    li {
+        counter-increment: item 1;
+        display: grid;
+        grid-template-columns: 6rem 4rem 4rem 4rem;
+        gap: 1rem;
+        position: relative;
+        justify-content: center;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+    input {
+        border: none;
+        border-bottom: 0.1rem solid var(--primary-color);
+    }
+    input:first-child {
+        margin-left: 2rem;
+    }
+    li::before {
+        content: counter(item) "";
+        position: absolute;
+        left: 0;
+        font-weight: bold; /* Optioneel, stijl de marker */
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        padding: 0.2rem 0.5rem;
+        color: var(--secondary-color);
+    }
 }

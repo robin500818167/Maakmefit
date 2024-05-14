@@ -19,7 +19,7 @@
         </nav>
     </header>
     <main>
-        <a href="bram.html" class="back"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
+        <a href="bram.html"><i class="fa-solid fa-arrow-left fa-xl"></i></a>
         <section class="center">
             <h1>CHALLENGE!</h1>
             <H2>DURF JIJ HET AAN?</H2>
@@ -33,9 +33,14 @@
             <input type="checkbox" id="workout" name="challenge" value="workout">
             <label for="workout">Een week het zelfde schema</label>
             <input type="checkbox" id="reps" name="challenge" value="reps">
-            <label for="reps">Maximale herhalingen op ...</label>
+            <label for="reps">Maximale herhalingen op <select name="pets" id="pet-select">
+                <option value="">Kies oefening</option>
+                <option value="benchpress">Bench press</option>
+                <option value="squat">Squat</option>
+                <option value="hiptrust">Hiptrust</option>
+              </select></label>
         </form>
-        <section class="center">
+        <section class="center challenge1">
             <a href="bram.html">Nodig Bram uit voor de challenge!</a>
         </section>
     </main> 
