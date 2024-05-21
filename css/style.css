@@ -7,16 +7,16 @@
     --second-subtitle-color: #5F5F5F;
 
     /* Sizing and Layout */
-    --header-height: 80px;
-    --header-width-max: 1200px;
-    --footer-height: 50px;
+    --header-height: 5rem;
+    --header-width-max: 75rem;
+    --footer-height: 3.13rem;
     --base-gap: 2rem;
-    --icon-size: 18px;
+    --icon-size: 1.13rem;
 
     /* Font Styling */
     --base-font-size: 1rem;
     --heading-font-size: 2rem;
-    --icon-font-size: 30px;
+    --icon-font-size: 1.88rem;
 }
 
 * {
@@ -307,7 +307,7 @@ img {
 .typing {
     display: grid;
     grid-template-columns: 4fr 1fr;
-    border: 1px solid var(--subtitle-color);
+    border: 0.06rem solid var(--subtitle-color);
     border-radius: 1rem;
     padding: 0.4rem 0.4rem 0.4rem 1rem;
     position: fixed;
@@ -332,7 +332,7 @@ input::placeholder {
     background-color: var(--secondary-color);
     padding: 1rem;
     border-radius: 1rem;
-    box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0.50rem 0.88rem 0 rgba(0, 0, 0, 0.25);
 }
 
 .chat-header {
@@ -414,7 +414,7 @@ footer {
     left: 0;
     z-index: 10;
     width: 100%;
-    box-shadow: 0 -5px 5px -5px #3C2561;
+    box-shadow: 0 -0.31rem 0.31rem -0.31rem #3C2561;
 
     nav {
         padding: 0 1rem;
@@ -457,7 +457,7 @@ footer i.fa-solid {
 .circle {
     border-radius: 100%;
     overflow: hidden;
-    width: 128px;
+    width: 8rem;
 }
 
 .p-image {
@@ -505,7 +505,7 @@ footer i.fa-solid {
   
 [role="progressbar"] {
     --percentage: var(--value);
-    --size: 300px;
+    --size: 18.75rem;
     animation: progress 2s 0.5s forwards;
     width: var(--size);
     aspect-ratio: 2 / 1;
@@ -850,8 +850,8 @@ footer i.fa-solid {
     content: "";
     position: absolute;
     top: 10%;
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     display: none;
     background: var(--primary-color);
