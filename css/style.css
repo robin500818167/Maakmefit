@@ -5,6 +5,7 @@
     --subtitle-color: #BAB8B8;
     --tertiary-color: #8569B0;
     --second-subtitle-color: #999999;
+    --black-color: #000000;
 
     /* Sizing and Layout */
     --header-height: 5rem;
@@ -122,6 +123,46 @@ a {
     }
 }
 
+.cup {
+    position: absolute;
+    right: 8rem;
+    top: 14rem;
+    box-shadow: 0rem 1rem 0.77rem 0.2rem var(--second-subtitle-color);
+
+    .fa-trophy:before {
+        color: transparent;
+        position: relative;
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+      }
+}
+
+.radio {
+    display: grid;
+    margin-top: 3rem;
+    row-gap: 1.3rem;
+    margin-left: 1rem;
+
+    div {
+        display: grid;
+        grid-template-columns: auto 1fr auto 1fr;
+        gap: 1rem;
+    }
+
+    label {
+        grid-column: 1/-1;
+        align-self: end;
+    }
+    input, select {
+        border-radius: 1rem;
+        padding: 0.8rem;
+    }
+    a {
+        color: var(--tertiary-color);
+    }
+}
+
 .notice {
     grid-column: 1/-1;
     font-size: 0.7rem;
@@ -200,6 +241,10 @@ img {
     align-items: center;
 }
 
+.subject1 {
+    margin: 0;
+}
+
 .subject > :not(:first-child) {
     color: var(--primary-color);
     font-weight: bold;
@@ -238,6 +283,7 @@ img {
         transition: all 0.5s;
         justify-content: center;
         gap: 1rem;
+        color: var(--black-color);
 }
 
 .performance {
@@ -273,11 +319,19 @@ img {
 }
 
 .help {
+    padding: 2.2rem 1rem;
+    border-radius: 3rem;
     position: fixed;
-    bottom: 2rem;
-    right: 0;
+    bottom: 4rem;
+    right: 0.5rem;
     z-index: 10;
     max-width: 30%;
+    box-shadow: 0 0.63rem 1.25rem 0.31rem rgba(0, 0, 0, 0.5);
+    background-color: var(--tertiary-color);
+
+    i {
+        color: var(--secondary-color);
+    }
 }
 
 .trainers {
@@ -500,6 +554,27 @@ footer i.fa-solid {
     display: flex;
     gap: 1rem;
     margin-top: 1rem;
+
+    a {
+        padding: 1rem 2.5rem;
+        display: flex;
+        background-color: var(--secondary-color);
+        border-radius: 1rem;
+        margin: 0.31rem 0;
+        box-shadow: 0 0.19rem 0.19rem 0 rgba(4, 118, 78, 0.13);
+        border: 0.06rem solid rgba(0, 0, 0, 0.1);
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s;
+        -webkit-flex: 1 1 0rem;
+        -ms-flex: 1 1 0rem;
+        flex: 1 1 0rem;
+        text-align: center;
+        justify-content: center;
+    }
+
+    a:first-child {
+        align-items: center;
+    }
 }
 .button-purple {
     color: var(--secondary-color);
@@ -525,7 +600,6 @@ footer i.fa-solid {
 [role="progressbar"] {
     --percentage: var(--value);
     --size: 18.75rem;
-    -webkit-animation: progress 2s 0.5s forwards;
     animation: progress 2s 0.5s forwards;
     width: var(--size);
     aspect-ratio: 2 / 1;
@@ -548,7 +622,6 @@ footer i.fa-solid {
     mask: radial-gradient(at 50% 100%, var(--secondary-color) 55%, transparent 55.5%);
     mask-mode: alpha;
     -webkit-mask: radial-gradient(at 50% 100%, var(--secondary-color) 55%, transparent 55.5%);
-    -webkit-mask-mode: alpha;
 }
   
 [role="progressbar"]::after {
@@ -561,7 +634,12 @@ footer i.fa-solid {
 .progress {
     display: flex;
     justify-content: center;
-    margin: 1rem 0rem;
+    margin-bottom: 1rem;
+}
+
+.progress-title {
+    margin-top: 1rem;
+    margin-bottom: -1rem;
 }
 
 .update {
@@ -572,58 +650,24 @@ footer i.fa-solid {
 
 @keyframes slide-up {
     0% {
-        -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-        transform: translateY(100%);
+      transform: translateY(100%);
     }
     100% {
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0);
-    }
-}
-@-webkit-keyframes slide-up {
-    0% {
-        -webkit-transform: translateY(100%);
-            -ms-transform: translateY(100%);
-                transform: translateY(100%);
-    }
-    100% {
-        -webkit-transform: translateY(0);
-            -ms-transform: translateY(0);
-                transform: translateY(0);
+      transform: translateY(0);
     }
 }
 
 @keyframes slide-down {
     0% {
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-         transform: translateY(0);
+      transform: translateY(0);
     }
     100% {
-        -webkit-transform: translateY(100%);
-        -ms-transform: translateY(100%);
-         transform: translateY(100%);
-    }
-}
-
-@-webkit-keyframes slide-down {
-    0% {
-        -webkit-transform: translateY(0);
-            -ms-transform: translateY(0);
-                transform: translateY(0);
-    }
-    100% {
-        -webkit-transform: translateY(100%);
-            -ms-transform: translateY(100%);
-                transform: translateY(100%);
+      transform: translateY(100%);
     }
 }
 
 #change:target {
     display: block;
-    -webkit-animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1);
 }
   
@@ -636,7 +680,6 @@ footer i.fa-solid {
     border-radius: 1rem 1rem 0 0;
     padding: 1rem;
     background-color: var(--primary-color);
-    -webkit-animation: slide-down .6s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slide-down .6s cubic-bezier(0.4, 0, 0.2, 1);
 
     i {
@@ -823,29 +866,6 @@ footer i.fa-solid {
     }
 }
 
-.community {
-    a {
-        padding: 1rem 2.5rem;
-        display: flex;
-        background-color: var(--secondary-color);
-        border-radius: 1rem;
-        margin: 0.31rem 0;
-        box-shadow: 0 0.19rem 0.19rem 0 rgba(4, 118, 78, 0.13);
-        border: 0.06rem solid rgba(0, 0, 0, 0.1);
-        -webkit-transition: all 0.5s;
-        transition: all 0.5s;
-        -webkit-flex: 1 1 0rem;
-        -ms-flex: 1 1 0rem;
-        flex: 1 1 0rem;
-        text-align: center;
-        justify-content: center;
-    }
-
-    a:first-child {
-        align-items: center;
-    }
-}
-
 #note {
     display: none;
 }
@@ -861,7 +881,6 @@ footer i.fa-solid {
     border-radius: 1rem 1rem 0rem 0rem;
     padding: 1rem;
     color: var(--secondary-color);
-    -webkit-animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1);
     animation: slide-up .6s cubic-bezier(0.4, 0, 0.2, 1);
 
     i {
@@ -885,6 +904,8 @@ footer i.fa-solid {
         border-bottom: 0.2rem solid var(--secondary-color);
         padding: 1rem 0;
         min-width: 100%;
+        color: var(--secondary-color);
+        text-transform: uppercase;
 
         ::placeholder {
             color: var(--secondary-color);
@@ -1115,13 +1136,11 @@ ol {
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    -webkit-animation: fadeOut 3s ease-out forwards;
     animation: fadeOut 3s ease-out forwards; 
 }
 .loader {
     width: 7.50rem;
     height: 7.50rem;
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }
 @-webkit-keyframes spin {
